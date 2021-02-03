@@ -45,6 +45,7 @@ namespace Calculadora
             this.btsoma = new System.Windows.Forms.Button();
             this.btdivisao = new System.Windows.Forms.Button();
             this.btigual = new System.Windows.Forms.Button();
+            this.btce = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt1
@@ -165,6 +166,7 @@ namespace Calculadora
             this.btmultiplicacao.TabIndex = 13;
             this.btmultiplicacao.Text = "*";
             this.btmultiplicacao.UseVisualStyleBackColor = true;
+            this.btmultiplicacao.Click += new System.EventHandler(this.btmultiplicacao_Click);
             // 
             // btsubtracao
             // 
@@ -194,22 +196,34 @@ namespace Calculadora
             this.btdivisao.TabIndex = 14;
             this.btdivisao.Text = "/";
             this.btdivisao.UseVisualStyleBackColor = true;
+            this.btdivisao.Click += new System.EventHandler(this.btdivisao_Click);
             // 
             // btigual
             // 
             this.btigual.Location = new System.Drawing.Point(26, 59);
             this.btigual.Name = "btigual";
-            this.btigual.Size = new System.Drawing.Size(237, 23);
+            this.btigual.Size = new System.Drawing.Size(176, 23);
             this.btigual.TabIndex = 15;
             this.btigual.Text = "=";
             this.btigual.UseVisualStyleBackColor = true;
             this.btigual.Click += new System.EventHandler(this.btigual_Click);
+            // 
+            // btce
+            // 
+            this.btce.Location = new System.Drawing.Point(208, 58);
+            this.btce.Name = "btce";
+            this.btce.Size = new System.Drawing.Size(55, 23);
+            this.btce.TabIndex = 16;
+            this.btce.Text = "CE";
+            this.btce.UseVisualStyleBackColor = true;
+            this.btce.Click += new System.EventHandler(this.btce_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 253);
+            this.Controls.Add(this.btce);
             this.Controls.Add(this.btigual);
             this.Controls.Add(this.btdivisao);
             this.Controls.Add(this.btmultiplicacao);
@@ -252,6 +266,7 @@ namespace Calculadora
         private System.Windows.Forms.Button btsoma;
         private System.Windows.Forms.Button btdivisao;
         private System.Windows.Forms.Button btigual;
+        private System.Windows.Forms.Button btce;
     }
 }
 

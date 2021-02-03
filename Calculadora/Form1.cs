@@ -82,12 +82,39 @@ namespace Calculadora
             {
                 resultado = numero1 + int.Parse(visor.Text);
                 visor.Text = Convert.ToString(resultado);
+                numero1 = resultado;
             }
 
             else if (operacao == "subtracao")
             {
                 resultado = numero1 - int.Parse(visor.Text);
                 visor.Text = Convert.ToString(resultado);
+                numero1 = resultado;
+            }
+
+            else if (operacao == "multiplicacao")
+            {
+                resultado = numero1 * int.Parse(visor.Text);
+                visor.Text = Convert.ToString(resultado);
+                numero1 = resultado;
+            }
+
+            else if (operacao == "divisao")
+            {
+                if (numero1 == 0 || int.Parse(visor.Text) == 0)
+                {
+                    MessageBox.Show("Não é possível dividir por 0 (zero). Reinicie a operação.");
+                    numero1 = 0;
+                    resultado = 0;
+                    visor.Text = null;
+                }
+
+                else
+                {
+                    resultado = numero1 / int.Parse(visor.Text);
+                    visor.Text = Convert.ToString(resultado);
+                    numero1 = resultado;
+                }
             }
         }
 
@@ -96,6 +123,27 @@ namespace Calculadora
             numero1 = int.Parse(visor.Text);
             visor.Text = null;
             operacao = "subtracao";
+        }
+
+        private void btmultiplicacao_Click(object sender, EventArgs e)
+        {
+            numero1 = int.Parse(visor.Text);
+            visor.Text = null;
+            operacao = "multiplicacao";
+        }
+
+        private void btdivisao_Click(object sender, EventArgs e)
+        {
+            numero1 = int.Parse(visor.Text);
+            visor.Text = null;
+            operacao = "divisao";
+        }
+
+        private void btce_Click(object sender, EventArgs e)
+        {
+            visor.Text = null;
+            numero1 = 0;
+            resultado = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
